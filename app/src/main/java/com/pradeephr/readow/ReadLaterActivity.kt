@@ -5,101 +5,101 @@ import android.app.Dialog
 import android.content.Intent
 import android.graphics.Canvas
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pradeephr.readow.adapter.CustomPbar
 import com.pradeephr.readow.adapter.LocalFeedAdapter
+import com.pradeephr.readow.adapter.NewsAdapter
+import com.pradeephr.readow.adapter.SavedArticlesAdapter
 import com.pradeephr.readow.api.DatabaseHelper
-import com.pradeephr.readow.databinding.ActivityMainBinding
+import com.pradeephr.readow.api.SavedArticles
+import com.pradeephr.readow.databinding.ActivityReadLaterBinding
 import com.pradeephr.readow.model.DbModelSql
+import com.pradeephr.readow.model.ReadLaterModel
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.Dispatchers.Main
-import java.util.*
 
-
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var imageViewAdd:ImageView
+class ReadLaterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityReadLaterBinding
     private lateinit var rv:RecyclerView
-    private lateinit var dbModelSql: DbModelSql
-    private lateinit var listToPass:List<DbModelSql>
-    private lateinit var databaseHelper: DatabaseHelper
     private lateinit var pbar: CustomPbar
-    private lateinit var myAdapter: LocalFeedAdapter
     private lateinit var dialog: Dialog
-    private lateinit var readLater:ConstraintLayout
+    private lateinit var listToPass:List<ReadLaterModel>
     private var pos=0
-
+    private lateinit var savedArticles: SavedArticles
+    private lateinit var myAdapter: SavedArticlesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_myCustomTheme)
+        binding= ActivityReadLaterBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         initializer()
         recyclerViewInit()
-
-
-
-        imageViewAdd.setOnClickListener {
-            val intent = Intent(this, AgencyList::class.java)
-            startActivity(intent)
-        }
-
-
-        readLater.setOnClickListener {
-            val intent=Intent(this,ReadLaterActivity::class.java)
-            startActivity(intent)
-        }
-
-
-    }
-
-    override fun onResume() {
-        super.onResume()
         adapterRv()
-
     }
+
 
     private fun recyclerViewInit() {
-        val viewManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
+        val viewManager= LinearLayoutManager(this@ReadLaterActivity, LinearLayoutManager.VERTICAL,false)
         rv.apply {
             setHasFixedSize(true)
             layoutManager=viewManager
-            addItemDecoration(DividerItemDecoration(this.context,DividerItemDecoration.VERTICAL))
+            addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
         }
 
-        val simpleCallback=object:ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT){
+        val simpleCallback=object: ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT){
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-               return false
+                return false
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 pos=viewHolder.adapterPosition
-                warningDialog()
+                when (direction) {
+                    ItemTouchHelper.LEFT -> {
+                        pos=viewHolder.adapterPosition
+                       warningDialog()
+                    }
+                    ItemTouchHelper.RIGHT -> {
+
+                        val intent= Intent(this@ReadLaterActivity,WebActivity::class.java)
+                        intent.putExtra("loadUrl", listToPass[pos].articleLink)
+                        myAdapter.notifyDataSetChanged() //to revert back the swiped item
+                        startActivity(intent)
+                    }
+                }
+
             }
 
             override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
 
                 RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                  .addActionIcon(R.drawable.ic_dustbin)
+                    .addBackgroundColor(ContextCompat.getColor(this@ReadLaterActivity, R.color.white))
+                    .addSwipeLeftActionIcon(R.drawable.ic_dustbin)
+                    .addSwipeRightActionIcon(R.drawable.ic_open6)
+                    .addSwipeRightLabel("Read Full Article")
+                    .addSwipeLeftLabel("Delete")
                     .create()
                     .decorate()
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
             }
         }
-        val itemTouchHelper=ItemTouchHelper(simpleCallback)
+        val itemTouchHelper= ItemTouchHelper(simpleCallback)
         itemTouchHelper.attachToRecyclerView(rv)
     }
 
@@ -107,28 +107,23 @@ class MainActivity : AppCompatActivity() {
 
     private fun adapterRv() {
         pbar.showPbar()
-        CoroutineScope(Main).launch {
-            withContext(CoroutineScope(IO).coroutineContext) {
-                listToPass = databaseHelper.readAll()
+        CoroutineScope(Dispatchers.Main).launch {
+            withContext(CoroutineScope(Dispatchers.IO).coroutineContext) {
+                listToPass = savedArticles.readAll()
                 pbar.hidePbar()
             }
-            myAdapter=LocalFeedAdapter(this@MainActivity,listToPass)
+            myAdapter= SavedArticlesAdapter(this@ReadLaterActivity,listToPass)
             rv.adapter=myAdapter
         }
     }
 
 
     private fun initializer() {
-        imageViewAdd=binding.imgAdd
-        rv=binding.localFeedRow
-        dbModelSql= DbModelSql()
-        listToPass= mutableListOf()
-        databaseHelper= DatabaseHelper(this@MainActivity)
-        pbar= CustomPbar(this@MainActivity)
+        rv=binding.readLaterRecyclerView
+        pbar= CustomPbar(this@ReadLaterActivity)
         dialog=Dialog(this)
-        readLater=binding.readLater
+        savedArticles= SavedArticles(this)
     }
-
 
     @SuppressLint("SetTextI18n")
     fun warningDialog(){
@@ -144,15 +139,15 @@ class MainActivity : AppCompatActivity() {
         textView.text = "Are you sure, You want to delete this item ?"
         dialog.show()
         btnOk.setOnClickListener {
-            val dbModelSql=DbModelSql()
-            dbModelSql.dataId=listToPass[pos].dataId
-            databaseHelper.deleteOne(dbModelSql)
+            val readLaterModel=ReadLaterModel()
+            readLaterModel.dataId=listToPass[pos].dataId
+            savedArticles.deleteOne(readLaterModel)
             adapterRv()
             dialog.dismiss() }
         btnHome.text = "Cancel"
-        btnHome.setOnClickListener { dialog.dismiss();recreate() }
+        btnHome.setOnClickListener { dialog.dismiss();
+        adapterRv() }
     }
-
 
 
 }

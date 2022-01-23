@@ -37,4 +37,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="share">Share</string>
     <string name="logo">Logo</string>
+    <string name="read_later">Read later >>></string>
+    <string name="title_activity_read_later">ReadLaterActivity</string>
+    <string name="my_saved_aricles">My Saved Aricles</string>
 </resources>

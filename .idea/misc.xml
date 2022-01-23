@@ -6,6 +6,8 @@
         <entry key="..\:/Readow/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/divider.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_add_sign.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_archive.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_archive2.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_close.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_darkmode.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_description.xml" value="0.24375" />
@@ -37,8 +39,10 @@
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_refresh2.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_right.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_right1.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_right2.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_rsslg.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_rsslg2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_saved3.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_settings.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_share2.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_sharelink.xml" value="0.24375" />
@@ -50,16 +54,18 @@
         <entry key="..\:/Readow/app/src/main/res/drawable/splash_image.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/layout-v28/success_dialog.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/layout/activity_agency_list.xml" value="0.2234375" />
-        <entry key="..\:/Readow/app/src/main/res/layout/activity_main.xml" value="0.40357478833490124" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Readow/app/src/main/res/layout/activity_news.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_read_later.xml" value="0.264" />
         <entry key="..\:/Readow/app/src/main/res/layout/activity_settings_actiity.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/layout/activity_web.xml" value="0.4515789473684211" />
         <entry key="..\:/Readow/app/src/main/res/layout/content_settings_actiity.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/layout/custom_lbar.xml" value="0.176" />
         <entry key="..\:/Readow/app/src/main/res/layout/custom_pbar.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/layout/fragment_first.xml" value="0.2234375" />
-        <entry key="..\:/Readow/app/src/main/res/layout/local_feed_rvcard.xml" value="0.2" />
+        <entry key="..\:/Readow/app/src/main/res/layout/local_feed_rvcard.xml" value="0.264" />
         <entry key="..\:/Readow/app/src/main/res/layout/news_card.xml" value="0.25" />
+        <entry key="..\:/Readow/app/src/main/res/layout/readlater_card.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/layout/success_dialog.xml" value="0.2234375" />
         <entry key="..\:/Readow/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24375" />
       </map>

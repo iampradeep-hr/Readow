@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_listitem"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="@string/title"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/newsBody"
+            app:layout_constraintStart_toStartOf="@+id/newsImage" />
+
+        <TextView
+            android:id="@+id/newsTimeandDate"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            tools:ignore="SmallSp"
+            />
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
