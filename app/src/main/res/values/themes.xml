@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.myCustomTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryVariant">@color/grey_appbar</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor">@color/toolBarGrey</item>
+    </style>
+
+    <style name="Theme.newsLytTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryVariant">@color/grey_appbar</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="ProgressTheme" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorAccent">#00FF0B</item>
+    </style>
+
+
+    <style name="splashScreenTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
+
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Readow/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/divider.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_add_sign.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_close.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_darkmode.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_description.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_dustbin.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_error.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_error404.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_how.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_image.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_nightmode.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_ok.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_open2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_open3.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_open4.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_open5.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_open6.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus1.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus10.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus11.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus3.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus4.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus5.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus7.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus8.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_plus_square.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_refresh.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_refresh1.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_refresh2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_right.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_right1.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_rsslg.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_rsslg2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_settings.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_share2.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_sharelink.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_splash.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_tools.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_warning.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/my_bg_dialog.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/my_save_btn.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/splash_image.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/layout-v28/success_dialog.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_agency_list.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_main.xml" value="0.40357478833490124" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_news.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_settings_actiity.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/activity_web.xml" value="0.4515789473684211" />
+        <entry key="..\:/Readow/app/src/main/res/layout/content_settings_actiity.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/custom_lbar.xml" value="0.176" />
+        <entry key="..\:/Readow/app/src/main/res/layout/custom_pbar.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/fragment_first.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/layout/local_feed_rvcard.xml" value="0.2" />
+        <entry key="..\:/Readow/app/src/main/res/layout/news_card.xml" value="0.25" />
+        <entry key="..\:/Readow/app/src/main/res/layout/success_dialog.xml" value="0.2234375" />
+        <entry key="..\:/Readow/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
