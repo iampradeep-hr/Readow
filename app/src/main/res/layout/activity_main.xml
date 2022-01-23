@@ -94,8 +94,8 @@
 
         <ImageView
             android:id="@+id/save"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginStart="8dp"
             android:contentDescription="@string/read_later"
             android:src="@drawable/ic_archive2"

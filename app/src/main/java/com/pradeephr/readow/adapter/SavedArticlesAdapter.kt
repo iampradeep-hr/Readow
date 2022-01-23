@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.pradeephr.readow.R
-import com.pradeephr.readow.api.SavedArticles
 import com.pradeephr.readow.model.ReadLaterModel
-import com.pradeephr.readow.model.RssItem
 
 class SavedArticlesAdapter(val context: Context, val items: List<ReadLaterModel>) :
     RecyclerView.Adapter<SavedArticlesAdapter.ViewHolder>() {

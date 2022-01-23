@@ -10,7 +10,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.pradeephr.readow.model.DbModelSql;
-import com.pradeephr.readow.model.RssNamesandLinks;
 
 import java.util.ArrayList;
 import java.util.List;
