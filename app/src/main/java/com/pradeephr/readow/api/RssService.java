@@ -8,6 +8,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Url;
 
+@SuppressWarnings("deprecation")
 public interface RssService {
     String BASE_URL="https://timesofindia.indiatimes.com/rssfeeds/";
 

@@ -11,9 +11,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 private const val BASE_URL="https://rss-flash-default-rtdb.firebaseio.com/rssurl/"
-private const val XMLTOJSON_URL="https://www.toptal.com/developers/"
 
-public var NEWS_URL=""
 
 interface RetrofitHelper {
 
@@ -24,13 +22,6 @@ interface RetrofitHelper {
 
     @GET("{res}.json")
     fun getSelectedAgencyNamesandLinks(@Path("res") res:String):Call<RssNamesandLinks>
-
-
-
-
-
-
-
 
 }
 

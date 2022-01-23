@@ -1,10 +1,8 @@
 package com.pradeephr.readow.adapter
 
-import  android.app.Dialog
+import android.app.Dialog
 import android.content.Context
 import com.pradeephr.readow.R
-import android.content.DialogInterface
-import android.view.KeyEvent
 
 
 class CustomPbar(context: Context) {

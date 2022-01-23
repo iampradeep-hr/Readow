@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.pradeephr.readow.NewsActivity
 import com.pradeephr.readow.R
-import com.pradeephr.readow.api.DatabaseHelper
 import com.pradeephr.readow.model.DbModelSql
 
 class LocalFeedAdapter(val context: Context,val data:List<DbModelSql>): RecyclerView.Adapter<LocalFeedAdapter.LocalFeedViewHolder>() {

@@ -93,14 +93,14 @@ class AgencyList : AppCompatActivity() {
                 var b=false
                 var i=false
                 CoroutineScope(Main).launch{
-                    CoroutineScope(IO).async {
-                        val databaseHelper=DatabaseHelper(this@AgencyList)
-                        if (!databaseHelper.checkifExists(dbModelSql)){
-                            b=databaseHelper.addOne(dbModelSql)
-                        }else{
-                            i=true
+                    withContext(CoroutineScope(IO).coroutineContext) {
+                        val databaseHelper = DatabaseHelper(this@AgencyList)
+                        if (!databaseHelper.checkifExists(dbModelSql)) {
+                            b = databaseHelper.addOne(dbModelSql)
+                        } else {
+                            i = true
                         }
-                    } .await()
+                    }
                     if (b){
                         successDialog()
                     }else if(i){

@@ -10,30 +10,14 @@
     <color name="savedPurple">#A1A9FE</color>
 
 
-
-
+    //custom colors
     <color name="grey_appbar">#344A70</color>
     <color name="grey_listitem">#52688F</color>
     <color name="grey_listitem2">#425b8d</color>
     <color name="grey_background">#1C202B</color>
     <color name="toolBarGrey44">#C3E0E5</color>
     <color name="toolBarGrey4">#628395</color>
-
-
-
-
-
-    <color name="toolBarGrey11">#2B4560</color>
     <color name="toolBarGrey">#344A70</color>
-    <color name="toolBarGrey12">#333F63</color>
-    <color name="toolBarGrey13">#1C3F60</color>
-    <color name="toolBarGrey2">#41455f</color>
-    <color name="toolBarGrey3">#2D3D69</color>
 
 
-    <color name="toolBarGrey6">#456caa</color>
-    <color name="toolBarGrey7">#4B6587</color>
-    <color name="toolBarGrey10">#31395a</color>
-    <color name="toolBarGrey9">#425b8d</color>
-    <color name="toolBarGrey55">#414459</color>
 </resources>

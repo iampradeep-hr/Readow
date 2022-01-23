@@ -43,9 +43,7 @@ class WebActivity : AppCompatActivity() {
         imageViewRefresh.setOnClickListener { runCode() }
         imageViewDarkMode.setOnClickListener {
             if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(webView.settings, WebSettingsCompat.FORCE_DARK_ON);
-            }else{
-                //do nothing
+                WebSettingsCompat.setForceDark(webView.settings, WebSettingsCompat.FORCE_DARK_ON)
             }
         }
 

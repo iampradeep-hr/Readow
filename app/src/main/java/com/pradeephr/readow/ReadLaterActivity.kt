@@ -68,7 +68,7 @@ class ReadLaterActivity : AppCompatActivity() {
 
                         val intent= Intent(this@ReadLaterActivity,WebActivity::class.java)
                         intent.putExtra("loadUrl", listToPass[pos].articleLink)
-                        myAdapter.notifyDataSetChanged() //to revert back the swiped item
+                        myAdapter.notifyItemChanged(pos)//to revert backthe swiped item
                         startActivity(intent)
                     }
                 }
@@ -134,8 +134,8 @@ class ReadLaterActivity : AppCompatActivity() {
             adapterRv()
             dialog.dismiss() }
         btnHome.text = "Cancel"
-        btnHome.setOnClickListener { dialog.dismiss();
-        adapterRv() }
+        btnHome.setOnClickListener { dialog.dismiss()
+            adapterRv() }
     }
 
 

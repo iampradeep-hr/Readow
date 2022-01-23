@@ -15,9 +15,5 @@ public class RssItem
     @Element
     public String pubDate;
 
-    @Element(required = false)
-    public String description;
-
-
 }
 
