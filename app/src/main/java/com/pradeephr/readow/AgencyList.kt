@@ -45,7 +45,6 @@ class AgencyList : AppCompatActivity() {
 
         initializer() //initialize and set views
 
-
         pbar.showPbar()
         CoroutineScope(Main).launch {
             adapter1 = ArrayAdapter<String>(
@@ -86,8 +85,7 @@ class AgencyList : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
-        }
-
+        } //on selecting in sp1,sp2 will fetch the related data
 
 
         spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -107,7 +105,6 @@ class AgencyList : AppCompatActivity() {
 
             }
         }
-
 
 
         btnSave.setOnClickListener {
