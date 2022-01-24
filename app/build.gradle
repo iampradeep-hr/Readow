@@ -50,8 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-    //Fragment
-    implementation("androidx.fragment:fragment-ktx:1.4.0")
 
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -65,13 +63,8 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
     //lottie
     implementation 'com.airbnb.android:lottie:4.2.2'
-
     //webview dark
     implementation 'androidx.webkit:webkit:1.4.0'
-
-
-
-    //jsoup
-    implementation 'org.jsoup:jsoup:1.14.3'
+    //Recycler view Swipe decor
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
 }

@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Readow/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/bg_spinner.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/divider.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_add_sign.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_archive.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_archive2.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_close.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_darkmode.xml" value="0.24375" />
+        <entry key="..\:/Readow/app/src/main/res/drawable/ic_database.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_description.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_dustbin.xml" value="0.24375" />
         <entry key="..\:/Readow/app/src/main/res/drawable/ic_error.xml" value="0.24375" />

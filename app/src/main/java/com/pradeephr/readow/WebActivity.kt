@@ -100,9 +100,8 @@ class WebActivity : AppCompatActivity() {
 
         }
 
-
-
     }
+
 
     private inner class MyWebChromeClient: WebChromeClient() {
         override fun onProgressChanged(view: WebView?, newProgress: Int) {

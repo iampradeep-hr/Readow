@@ -12,17 +12,13 @@ import retrofit2.http.Path
 
 private const val BASE_URL="https://rss-flash-default-rtdb.firebaseio.com/rssurl/"
 
-
 interface RetrofitHelper {
-
 
     @GET("agency.json")
     fun getAgencyList(): Call<RssAgency>
 
-
     @GET("{res}.json")
     fun getSelectedAgencyNamesandLinks(@Path("res") res:String):Call<RssNamesandLinks>
-
 }
 
 object ServiceForAgency{
@@ -35,8 +31,6 @@ object ServiceForAgency{
             .build()
         retrofitInstance=retrofit.create(RetrofitHelper::class.java)
     }
-
-
 }
 
 

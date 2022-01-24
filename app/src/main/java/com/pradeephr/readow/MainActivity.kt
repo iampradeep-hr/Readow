@@ -49,26 +49,21 @@ class MainActivity : AppCompatActivity() {
         initializer()
         recyclerViewInit()
 
-
-
         imageViewAdd.setOnClickListener {
             val intent = Intent(this, AgencyList::class.java)
             startActivity(intent)
         }
-
 
         readLater.setOnClickListener {
             val intent=Intent(this,ReadLaterActivity::class.java)
             startActivity(intent)
         }
 
-
     }
 
     override fun onResume() {
         super.onResume()
         adapterRv()
-
     }
 
     private fun recyclerViewInit() {
@@ -102,7 +97,7 @@ class MainActivity : AppCompatActivity() {
         }
         val itemTouchHelper=ItemTouchHelper(simpleCallback)
         itemTouchHelper.attachToRecyclerView(rv)
-    }
+    } //initializing the recycler view with swipe code
 
 
 
@@ -116,7 +111,7 @@ class MainActivity : AppCompatActivity() {
             myAdapter=LocalFeedAdapter(this@MainActivity,listToPass)
             rv.adapter=myAdapter
         }
-    }
+    }  // adapter for recycler view
 
 
     private fun initializer() {
@@ -128,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         pbar= CustomPbar(this@MainActivity)
         dialog=Dialog(this)
         readLater=binding.readLater
-    }
+    } // linking the xml file components with the kotlin file and initializing other things
 
 
     @SuppressLint("SetTextI18n")
@@ -152,8 +147,6 @@ class MainActivity : AppCompatActivity() {
             dialog.dismiss() }
         btnHome.text = "Cancel"
         btnHome.setOnClickListener { dialog.dismiss();recreate() }
-    }
-
-
+    } // warning dialog for confirming before deleting
 
 }

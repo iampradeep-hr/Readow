@@ -92,8 +92,6 @@ class ReadLaterActivity : AppCompatActivity() {
         itemTouchHelper.attachToRecyclerView(rv)
     }
 
-
-
     private fun adapterRv() {
         pbar.showPbar()
         CoroutineScope(Dispatchers.Main).launch {
@@ -103,6 +101,7 @@ class ReadLaterActivity : AppCompatActivity() {
             }
             myAdapter= SavedArticlesAdapter(this@ReadLaterActivity,listToPass)
             rv.adapter=myAdapter
+
         }
     }
 
@@ -137,6 +136,4 @@ class ReadLaterActivity : AppCompatActivity() {
         btnHome.setOnClickListener { dialog.dismiss()
             adapterRv() }
     }
-
-
 }

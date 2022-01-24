@@ -46,7 +46,6 @@ public class DbModelSql {
     }
 
     public DbModelSql(){
-        //temp
     }
 
 }

@@ -12,7 +12,6 @@ public class RssChannel
 //    @Element
 //    private String title;
 
-
     @ElementList(inline = true)
     public List<RssItem> item;
 

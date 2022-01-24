@@ -87,5 +87,4 @@ public class SavedArticles extends SQLiteOpenHelper {
             return false;
     }
 
-
 }

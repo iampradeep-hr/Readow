@@ -79,8 +79,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-//
-
     public Boolean checkifExists(DbModelSql dbModelSql) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         String query = "SELECT * FROM " + LOCALFEED_TABLE + " WHERE " + COLUMN_AGENCY_LINK + "=" + '"'+dbModelSql.getAgencyLink()+'"' ;
@@ -90,7 +88,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return false;
     }
-
 }
 
 

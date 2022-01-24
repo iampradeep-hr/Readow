@@ -35,7 +35,7 @@ class AgencyList : AppCompatActivity() {
     private var selectedAgency: String = ""
     private lateinit var dbModelSql: DbModelSql
     private lateinit var pbar: CustomPbar
-    private lateinit var dialog:Dialog
+    private lateinit var dialog: Dialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,11 +46,18 @@ class AgencyList : AppCompatActivity() {
         initializer() //initialize and set views
 
 
-
         pbar.showPbar()
         CoroutineScope(Main).launch {
-            adapter1 = ArrayAdapter<String>(this@AgencyList, android.R.layout.simple_list_item_activated_1, data1)
-            adapter2 = ArrayAdapter<String>(this@AgencyList, android.R.layout.simple_list_item_activated_1, data2)
+            adapter1 = ArrayAdapter<String>(
+                this@AgencyList,
+                android.R.layout.simple_list_item_activated_1,
+                data1
+            )
+            adapter2 = ArrayAdapter<String>(
+                this@AgencyList,
+                android.R.layout.simple_list_item_activated_1,
+                data2
+            )
             spinner1.adapter = adapter1
             spinner2.adapter = adapter2
             withContext(CoroutineScope(IO).coroutineContext) {
@@ -59,10 +66,15 @@ class AgencyList : AppCompatActivity() {
         } //launches to fetch data for sp1
 
         spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 selectedAgency = data1[position]
                 dbModelSql.agencyName = data1[position]
-                if (selectedAgency!="--Choose here--"){
+                if (selectedAgency != "--Choose here--") {
                     pbar.showPbar()
                     CoroutineScope(Main).launch {
                         withContext(CoroutineScope(IO).coroutineContext) {
@@ -71,28 +83,38 @@ class AgencyList : AppCompatActivity() {
                     }
                 }
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
 
-        spinner2.onItemSelectedListener=object:AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (data3[position]!="--Choose here"){
-                    dbModelSql.agencyCategory=data2[position]
-                    dbModelSql.agencyLink=data3[position]
+
+
+        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (data3[position] != "--Choose here") {
+                    dbModelSql.agencyCategory = data2[position]
+                    dbModelSql.agencyLink = data3[position]
                 }
             }
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
-
         }
 
+
+
         btnSave.setOnClickListener {
-            if ((dbModelSql.agencyName!="--Choose here--")&&(dbModelSql.agencyCategory!="--Choose here--")){
-                var b=false
-                var i=false
-                CoroutineScope(Main).launch{
+            if ((dbModelSql.agencyName != "--Choose here--") && (dbModelSql.agencyCategory != "--Choose here--")) {
+                var b = false
+                var i = false
+                CoroutineScope(Main).launch {
                     withContext(CoroutineScope(IO).coroutineContext) {
                         val databaseHelper = DatabaseHelper(this@AgencyList)
                         if (!databaseHelper.checkifExists(dbModelSql)) {
@@ -101,25 +123,21 @@ class AgencyList : AppCompatActivity() {
                             i = true
                         }
                     }
-                    if (b){
+                    if (b) {
                         successDialog()
-                    }else if(i){
+                    } else if (i) {
                         alreadyExistDialog()
-                    }else{
+                    } else {
                         alreadyExistDialog()
                     }
                 }
-            }else{
+            } else {
                 warningDialog()
             }
         }
 
+
     }
-
-
-
-
-
 
 
     private fun initializer() {
@@ -131,7 +149,7 @@ class AgencyList : AppCompatActivity() {
         data2 = mutableListOf()
         data3 = mutableListOf()
         dbModelSql = DbModelSql()
-        dialog=Dialog(this)
+        dialog = Dialog(this)
     }
 
 
@@ -146,6 +164,7 @@ class AgencyList : AppCompatActivity() {
                     pbar.hidePbar()
                 }
             }
+
             override fun onFailure(call: Call<RssAgency>, t: Throwable) {
                 pbar.hidePbar()
                 failureDialog()
@@ -154,7 +173,7 @@ class AgencyList : AppCompatActivity() {
     }
 
     private fun fetchSelectedAgencyLinks() {
-        val res =ServiceForAgency.retrofitInstance.getSelectedAgencyNamesandLinks(selectedAgency)
+        val res = ServiceForAgency.retrofitInstance.getSelectedAgencyNamesandLinks(selectedAgency)
         res.enqueue(object : Callback<RssNamesandLinks> {
             override fun onResponse(
                 call: Call<RssNamesandLinks>,
@@ -171,6 +190,7 @@ class AgencyList : AppCompatActivity() {
                 }
                 pbar.hidePbar()
             }
+
             override fun onFailure(call: Call<RssNamesandLinks>, t: Throwable) {
                 pbar.hidePbar()
                 failureDialog()
@@ -179,14 +199,13 @@ class AgencyList : AppCompatActivity() {
     }
 
 
-
-
-
-
     private fun successDialog() {
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.success_dialog)
-        dialog.window?.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setLayout(
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
         val btnOk = dialog.findViewById<Button>(R.id.buttonOk)
         val btnHome = dialog.findViewById<Button>(R.id.buttonHome)
         dialog.show()
@@ -198,7 +217,10 @@ class AgencyList : AppCompatActivity() {
     fun failureDialog() {
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.success_dialog)
-        dialog.window?.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setLayout(
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
         val btnOk = dialog.findViewById<Button>(R.id.buttonOk)
         val btnHome = dialog.findViewById<Button>(R.id.buttonHome)
         val textView = dialog.findViewById<TextView>(R.id.tvDialog)
@@ -207,22 +229,26 @@ class AgencyList : AppCompatActivity() {
         textView.text = "Network Error"
         dialog.show()
         btnOk.setOnClickListener {
-            dialog.dismiss();finish() }
+            dialog.dismiss();finish()
+        }
         btnHome.setOnClickListener { dialog.dismiss();finish() }
     }
 
 
     @SuppressLint("SetTextI18n")
-    fun warningDialog(){
+    fun warningDialog() {
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.success_dialog)
-        dialog.window?.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setLayout(
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
         val btnOk = dialog.findViewById<Button>(R.id.buttonOk)
         val btnHome = dialog.findViewById<Button>(R.id.buttonHome)
         val textView = dialog.findViewById<TextView>(R.id.tvDialog)
         val imageView = dialog.findViewById<ImageView>(R.id.ivDialog)
-        btnHome.isVisible=false
-        btnOk.setText("Close")
+        btnHome.isVisible = false
+        btnOk.text = "Close"
         imageView.setImageResource(R.drawable.ic_warning)
         textView.text = "Invalid"
         dialog.show()
@@ -230,16 +256,19 @@ class AgencyList : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    fun alreadyExistDialog(){
+    fun alreadyExistDialog() {
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.success_dialog)
-        dialog.window?.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setLayout(
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
         val btnOk = dialog.findViewById<Button>(R.id.buttonOk)
         val btnHome = dialog.findViewById<Button>(R.id.buttonHome)
         val textView = dialog.findViewById<TextView>(R.id.tvDialog)
         val imageView = dialog.findViewById<ImageView>(R.id.ivDialog)
-        btnHome.isVisible=false
-        btnOk.setText("Ok")
+        btnHome.isVisible = false
+        btnOk.text = "Ok"
         imageView.setImageResource(R.drawable.ic_database)
         textView.text = "Data already exists"
         dialog.show()

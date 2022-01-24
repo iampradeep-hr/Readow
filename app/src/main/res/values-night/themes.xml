@@ -13,5 +13,5 @@
         <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:statusBarColor">@color/toolBarGrey</item>
     </style>
-    
+
 </resources>

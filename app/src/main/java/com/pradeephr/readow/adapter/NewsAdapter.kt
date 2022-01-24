@@ -16,7 +16,6 @@ class NewsAdapter(val context: Context, val items: List<RssItem>) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var newsTitle = view.findViewById<TextView>(R.id.newsTitle)
         val newsDateandTime=view.findViewById<TextView>(R.id.newsTimeandDate)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,6 +33,5 @@ class NewsAdapter(val context: Context, val items: List<RssItem>) :
     override fun getItemCount(): Int {
         return items.size
     }
-
 
 }

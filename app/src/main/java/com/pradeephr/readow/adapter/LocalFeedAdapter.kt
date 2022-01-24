@@ -13,6 +13,7 @@ import com.pradeephr.readow.NewsActivity
 import com.pradeephr.readow.R
 import com.pradeephr.readow.model.DbModelSql
 
+// adapter for the recycler view on Home page
 class LocalFeedAdapter(val context: Context,val data:List<DbModelSql>): RecyclerView.Adapter<LocalFeedAdapter.LocalFeedViewHolder>() {
 
     inner class LocalFeedViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
@@ -30,7 +31,6 @@ class LocalFeedAdapter(val context: Context,val data:List<DbModelSql>): Recycler
         val item=data[position]
         holder.tvName.text=item.agencyName
         holder.tvCategory.text=item.agencyCategory
-        Log.d("cat",item.agencyCategory)
         holder.tvLink.text=item.agencyLink
 
         holder.itemView.setOnClickListener {

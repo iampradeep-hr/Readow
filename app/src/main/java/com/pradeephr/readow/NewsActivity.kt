@@ -29,7 +29,6 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Call
@@ -173,7 +172,7 @@ class NewsActivity : AppCompatActivity() {
         btnHome.setOnClickListener { dialog.dismiss();finish() }
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
     fun addToReadLater() {
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.success_dialog)
@@ -193,15 +192,15 @@ class NewsActivity : AppCompatActivity() {
         btnHome.setOnClickListener { dialog.dismiss();dataAdapter.notifyDataSetChanged() }
         btnOk.setOnClickListener {
             CoroutineScope(Main).launch{
-                var flag=false
+                var flag: Boolean
                 val readLaterModel = ReadLaterModel()
-                CoroutineScope(IO).async {
+                withContext(CoroutineScope(IO).coroutineContext) {
                     val savedArticles = SavedArticles(this@NewsActivity)
                     readLaterModel.articleTitle = articles[pos].title
                     readLaterModel.articleLink = articles[pos].link
                     readLaterModel.articlePubDate = articles[pos].pubDate
-                    flag=savedArticles.checkifExists(readLaterModel)
-                }.await()
+                    flag = savedArticles.checkifExists(readLaterModel)
+                }
                 if (!flag){
                     savedArticles.addOne(readLaterModel)
                     dataAdapter.notifyDataSetChanged()
