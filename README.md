@@ -12,18 +12,14 @@
 - Light or dark theme available for Reading Article 
 - Full-screen mode for activities
 
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
 
 ## Installation
 ```bash
 Click on "Download" below or you can loacte it as "app-debug.apk"
 ```
-[Download](https://u.pcloud.link/publink/show?code=XZQ3mrXZl4zlG3VBYCF9dWLMQDRkCYDJs2k7) 
+[  Click here to download](https://u.pcloud.link/publink/show?code=XZQ3mrXZl4zlG3VBYCF9dWLMQDRkCYDJs2k7) 
 
-
-
+## Images
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
