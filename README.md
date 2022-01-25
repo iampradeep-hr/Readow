@@ -20,7 +20,7 @@ Loacte it as "app-debug.apk" in the above Code section / Click on Download below
 [Click here to download](https://u.pcloud.link/publink/show?code=kZyIfrXZpRdEh79uoa0FYuCO1X0x5BzF6pBV) 
 
 ## How to use ?
-![demo.mp4](https://user-images.githubusercontent.com/81664507/151015975-54242b5a-d4a6-49bf-be27-394cc05946ba.mp4)
+![Click here to watch the video](https://user-images.githubusercontent.com/81664507/151015975-54242b5a-d4a6-49bf-be27-394cc05946ba.mp4)
 
 ## Images
 ![1](https://user-images.githubusercontent.com/81664507/150901371-3ed94f40-40af-44b6-afe9-0a6b66ff085c.png)
