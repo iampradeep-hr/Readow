@@ -15,9 +15,9 @@
 
 ## Installation
 ```bash
-Click on "Download" below or you can loacte it as "app-debug.apk"
+Loacte it as "app-debug.apk" in the above Code section / Click on Download below
 ```
-[  Click here to download](https://drive.google.com/uc?export=download&id=1-gXwXgxZZ-Kbk1mhpvfaZKrKp7zvtrij) 
+[  Click here to download](https://u.pcloud.link/publink/show?code=kZyIfrXZpRdEh79uoa0FYuCO1X0x5BzF6pBV) 
 
 ## Images
 ![1](https://user-images.githubusercontent.com/81664507/150901371-3ed94f40-40af-44b6-afe9-0a6b66ff085c.png)
