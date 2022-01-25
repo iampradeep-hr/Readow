@@ -17,7 +17,7 @@
 ```bash
 Click on "Download" below or you can loacte it as "app-debug.apk"
 ```
-[  Click here to download](https://u.pcloud.link/publink/show?code=XZQ3mrXZl4zlG3VBYCF9dWLMQDRkCYDJs2k7) 
+[  Click here to download](https://drive.google.com/uc?export=download&id=1-gXwXgxZZ-Kbk1mhpvfaZKrKp7zvtrij) 
 
 ## Images
 ![1](https://user-images.githubusercontent.com/81664507/150901371-3ed94f40-40af-44b6-afe9-0a6b66ff085c.png)
