@@ -17,7 +17,7 @@
 ```bash
 Loacte it as "app-debug.apk" in the above Code section / Click on Download below
 ```
-[Click here to download](https://u.pcloud.link/publink/show?code=kZyIfrXZpRdEh79uoa0FYuCO1X0x5BzF6pBV) 
+[Click here to download](https://www.dropbox.com/s/ibc5v2xpia3g79x/app-debug.apk?dl=0) 
 
 ## How to use ?
 ![Click here to watch the video](https://user-images.githubusercontent.com/81664507/151015975-54242b5a-d4a6-49bf-be27-394cc05946ba.mp4)
